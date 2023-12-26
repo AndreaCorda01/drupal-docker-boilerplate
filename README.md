@@ -10,7 +10,7 @@ This is a boilerplate for creating a Drupal 10 project with Docker Compose and N
 - Basic knowledge of Docker and Docker Compose
 
  ## Structure
- This configuration will create:
+ This configuration contains:
  - Nginx server with production configuration
  - PHP FPM Server with composer and Drush installed
  - Mysql instance
