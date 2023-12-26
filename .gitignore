@@ -1,0 +1,130 @@
+# Patch/diff artifacts.
+*.patch
+*.diff
+*.orig
+*.rej
+interdiff*.txt
+
+# emacs artifacts.
+*~
+\#*\#
+
+# VI swap file.
+*.swp
+
+# Hidden files.
+.DS*
+.project
+
+# Windows links.
+*.lnk
+
+# Temporary files.
+tmp*
+
+# Exclude IDE's project directory.
+nbproject
+.idea
+
+# For Drupal 7, comment the following lines.
+vendor
+core/node_modules
+node_modules/
+
+# Exclude node_modules
+web/themes/custom/*/node_modules
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+
+# Ignore vendor dependencies and scripts
+/vendor
+/composer.phar
+/composer
+/robo.phar
+/robo
+/drush.phar
+/drush
+/drupal.phar
+/drupal
+
+# Other files
+.editorconfig
+.gitattributes
+
+# Modules and themes
+/web/.csslintrc
+/web/.eslintignore
+/web/.eslintrc.json
+/web/.ht.router.php
+/web/.htaccess
+/web/INSTALL.txt
+/web/README.md
+/web/autoload.php
+/web/core
+/web/example.gitignore
+/web/index.php
+/web/modules/*
+/web/profiles
+/web/robots.txt
+/web/sites/*
+/web/themes/*
+/web/update.php
+/web/web.config
+
+# Exceptions
+!/web/modules/custom
+!/web/themes/custom
+!/web/libraries/custom
+!/web/sites/*
+
+/web/sites/*/*settings*.php
+/web/sites/*/*settings.local.php
+/web/sites/*/*services*.yml
+/web/sites/*services*.yml
+web/sites/example.sites.php
+
+# Ignore paths that may contain user-generated content
+/web/sites/*/files
+/web/sites/*/public
+/web/sites/*/private
+/web/sites/*/files-public
+/web/sites/*/files-private
+
+# Ignore paths that may contain temporary files
+/web/sites/*/translations
+/web/sites/*/tmp
+/web/sites/*/cache
+/web/themes/custom/*/.sass-cache/
+/web/themes/custom/*/css/style.min.css
+web/themes/custom/*/css/style.css
+/web/themes/custom/*/css/bootstrap.min.css
+web/themes/custom/*/css/bootstrap.css
+web/themes/custom/*/css
+
+# Exclude the smtp setting from the configuration.
+config/sync/smtp.settings.yml
+
+.lando.yml
+
+docker/prod/*
