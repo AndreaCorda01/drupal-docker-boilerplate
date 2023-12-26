@@ -33,13 +33,10 @@ This is a boilerplate for creating a Drupal 10 project with Docker Compose and N
 
 During the installation will be required writing permission for the `sites/default` folder.
 
-`mkdir web/sites/default/files`
-
-`chmod a+w web/sites/default/files`
-
-`cp web/sites/default/default.settings.php web/sites/default/settings.php`
-
-`chmod a+w web/sites/default/settings.php`
+- `mkdir web/sites/default/files`
+- `chmod a+w web/sites/default/files`
+- `cp web/sites/default/default.settings.php web/sites/default/settings.php`
+- `chmod a+w web/sites/default/settings.php`
 
 Once the installation is complete, remember to remove writing permission to `settings.php`
 
