@@ -3,6 +3,10 @@
 
 This is a boilerplate for creating a Drupal 10 project with Docker Compose and Nginx for production and local environments.
 
+## Disclaimer :warning:
+
+  Remove from `docker-compose.yml` the **phpmyadmin** instance because it is supposed only for development and it is not password protected.
+
 
 ## Requirements
 
