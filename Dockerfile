@@ -35,6 +35,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY composer.json .
 COPY composer.lock .
+RUN composer install --no-scripts --no-autoloader
 
 # Install Drush globally
 RUN composer require drush/drush
