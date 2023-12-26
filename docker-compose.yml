@@ -30,17 +30,17 @@ services:
       - MYSQL_ROOT_PASSWORD=website_root_password
     volumes:
       - mysql:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - 81:80
-    environment:
-      - PMA_HOST=mysql
-      - PMA_USER=root
-      - PMA_PASSWORD=website_root_password
-      - PMA_ARBITRARY=1
-    depends_on:
-      - mysql
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin
+#    ports:
+#      - 81:80
+#    environment:
+#      - PMA_HOST=mysql
+#      - PMA_USER=root
+#      - PMA_PASSWORD=website_root_password
+#      - PMA_ARBITRARY=1
+#    depends_on:
+#      - mysql
 volumes:
   mysql:
     name: drupal_mysql
