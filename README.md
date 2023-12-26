@@ -3,17 +3,21 @@
 
 This is a boilerplate for creating a Drupal 10 project with Docker Compose and Nginx for production and local environments.
 
-  
 
 ## Requirements
 
 - Docker installed on the machine
 - Basic knowledge of Docker and Docker Compose
 
-  
+ ## Structure
+ This configuration will create:
+ - Nginx server with production configuration
+ - PHP FPM Server with composer and Drush installed
+ - Mysql instance
+ - Phpmyadmin instance
 
-## Usage
 
+## Installation
 
 ### New project
 
@@ -45,3 +49,18 @@ Once the installation is complete, remember to remove writing permission to `set
 1. Copy `docker-compose.yml` , `Dockerfile`  and `.dockerignore` on your drupal installation 
 2. Copy `scripts` and `nginx` folder on your project
 3. Execute `docker compose up -d --build`
+
+
+## Usage
+
+### Start the application
+`docker compose up -d --build`
+
+### Check logs
+`docker logs web`
+`docker logs drupal`
+
+### Execute drush command
+`docker exec -it drupal drush cr`
+You can open directly a shell inside your running machine to execute drush commands
+`docker exec -it drupal /bin/bash`
