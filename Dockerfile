@@ -23,8 +23,8 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     libmagickwand-dev --no-install-recommends \
     && pecl install imagick \
-    && docker-php-ext-enable imagick \
     && docker-php-ext-install pdo_mysql zip exif pcntl bcmath gd opcache \
+    && docker-php-ext-enable imagick opcache \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -35,7 +35,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY composer.json .
 COPY composer.lock .
-RUN composer install --no-scripts --no-autoloader
 
 # Install Drush globally
 RUN composer require drush/drush

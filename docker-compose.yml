@@ -1,38 +1,31 @@
 version: '3.8'
 services:
-  geonovation.web:
+  web:
     image: nginx:latest
     ports:
-      - 6000:80
+      - 80:80
     volumes:
       - ./:/var/www/html
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - drupal
   drupal:
-    image: drupal:7.99-php8.2-fpm-bullseye
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./docker/prod/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./:/var/www/html
-    environment:
-      - MYSQL_HOST=mysql
-      - MYSQL_DATABASE=geonovation_website
-      - MYSQL_USER=geonovation
-      - MYSQL_PASSWORD=6#aS7#muTvSJo
+      - ./nginx/www.conf:/usr/local/etc/php-fpm.d/www.conf
     depends_on:
         - mysql
+    command: "sh scripts/start.sh"
   mysql:
     image: mysql:latest
-    ports:
-      - 3307:3306
     environment:
-      - MYSQL_DATABASE=geonovation_website
-      - MYSQL_USER=geonovation
-      - MYSQL_PASSWORD=Q2r#22XRQYPe9@
-      - MYSQL_ROOT_PASSWORD=eLLfLLrN#Q87Us
+      - MYSQL_DATABASE=website_database
+      - MYSQL_USER=website_user
+      - MYSQL_PASSWORD=website_password
+      - MYSQL_ROOT_PASSWORD=website_root_password
     volumes:
       - mysql:/var/lib/mysql
   phpmyadmin:
@@ -42,10 +35,10 @@ services:
     environment:
       - PMA_HOST=mysql
       - PMA_USER=root
-      - PMA_PASSWORD=eLLfLLrN#Q87Us
+      - PMA_PASSWORD=website_root_password
       - PMA_ARBITRARY=1
     depends_on:
       - mysql
 volumes:
   mysql:
-    name: geonovation_drupal_mysql
+    name: drupal_mysql
