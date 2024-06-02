@@ -3,6 +3,11 @@
 
 This is a boilerplate for creating a Drupal 10 project with Docker Compose and Nginx for production and local environments.
 
+### Sponsor
+
+This project is sponsored by [GeoNovation](https://www.geonovation.it/)
+
+![GeoNovation Logo](geonovation-logo-black.svg "GeoNovation Logo")
 ## Disclaimer :warning:
 
   Remove from `docker-compose.yml` the **phpmyadmin** instance because it is supposed only for development and it is not password protected.

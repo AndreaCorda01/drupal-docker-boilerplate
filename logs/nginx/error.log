@@ -1,0 +1,3 @@
+2023/12/26 17:57:22 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:21
+2023/12/26 17:57:22 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:22
+2023/12/26 17:57:22 [emerg] 1#1: no "ssl_certificate" is defined for the "listen ... ssl" directive in /etc/nginx/nginx.conf:18
