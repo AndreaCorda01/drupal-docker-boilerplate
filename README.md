@@ -1,7 +1,29 @@
-
 # Drupal boilerplate with Docker Compose and Nginx
 
+> **Note:** This boilerplate has been updated in 2025 to support Drupal 11. Ensure your environment is compatible with the latest version before proceeding with the installation.
+
 This is a boilerplate for creating a Drupal 10 project with Docker Compose and Nginx for production and local environments.
+
+### SSL Configuration
+
+This boilerplate includes SSL configuration for both HTTP and HTTPS. The SSL certificates are stored in the `certs` directory.
+
+To enable SSL, you need to:
+
+1. Copy the SSL certificates to the `certs` directory
+2. Update the `nginx-ssl.conf` file to use the SSL certificates
+3. Make a Hard Link to the SSL certificates in the `certs` directory and change the owner to local user
+4. Update the `docker-compose.yml` file to use the SSL certificates
+```
+volumes:
+  - ./:/var/www/html
+  - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  - ./logs/nginx:/var/log/nginx
+  - ./ssl-certificates/YOURWEBSITE.org:/etc/letsencrypt/live/YOURWEBSITE.org:ro
+  - ./ssl-certificates/www.YOURWEBSITE.org:/etc/letsencrypt/live/www.YOURWEBSITE.org:ro
+```
+4. Update the `nginx.conf` file to use the SSL certificates
+
 
 ### Sponsor
 

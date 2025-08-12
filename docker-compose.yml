@@ -8,6 +8,8 @@ services:
       - ./:/var/www/html
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./logs/nginx:/var/log/nginx
+      # - ./ssl-certificates/YOURWEBSITE.org:/etc/letsencrypt/live/YOURWEBSITE.org:ro
+      # - ./ssl-certificates/www.YOURWEBSITE.org:/etc/letsencrypt/live/www.YOURWEBSITE.org:ro
     depends_on:
       - drupal
   drupal:
